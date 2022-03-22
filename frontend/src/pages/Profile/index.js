@@ -1,6 +1,6 @@
 import React,{useState, useEffect}from 'react';
 import {FiPower, FiTrash2} from 'react-icons/fi';
-import{Link, useHistory} from 'react-router-dom'
+import{Link, useNavigate} from 'react-router-dom'
 
 import api from '../../service/Api';
 
@@ -9,7 +9,7 @@ import './styles.css'
 import logoImg from '../../assets/logo.svg'
 
 export default function Profile(){
-    const history = useHistory();
+    const history = useNavigate();
     const[incidents, setIncidents] = useState([]);
 
     const ongName = localStorage.getItem('ongName');
@@ -42,7 +42,7 @@ export default function Profile(){
     //função para fazer logout do sistema
     function handleLogout(){
         localStorage.clear();
-        history.push('/')
+        history('/')
 
     }
 

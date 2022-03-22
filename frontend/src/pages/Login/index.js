@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import api from '../../service/Api';
-import { Link, useHistory} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 import {FiLogIn} from 'react-icons/fi';
 
@@ -13,7 +13,7 @@ import heroesImg from '../../assets/heroes.png';
 export default function Login(){ 
 
     const [id, setId] = useState();
-    const history = useHistory()
+    const history = useNavigate()
 
      async function handleLogin(e){
         e.preventDefault();

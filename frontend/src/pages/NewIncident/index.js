@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FiArrowLeft} from 'react-icons/fi';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 //import axios from 'axios';
 
 import api from '../../service/Api';
@@ -8,7 +8,7 @@ import './style.css';
 import logoImg from '../../assets/logo.svg';
 
 export default function NewIncident(){
-    const history = useHistory();
+    const history = useNavigate();
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [value, setValue] = useState('');

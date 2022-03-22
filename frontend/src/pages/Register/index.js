@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FiArrowLeft} from 'react-icons/fi';
-import { Link , useHistory} from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import api from '../../service/Api';
 import './styles.css';
 import logoImg from '../../assets/logo.svg';
@@ -11,7 +11,7 @@ export default function Register(){
     const [whatsapp, setWhatsapp]= useState('');
     const [city, setCity]= useState('');
     const [uf, setUf]= useState('');
-    const history = useHistory();
+    const history = useNavigate();
 
 
    async function hangleRegister(e){
@@ -27,7 +27,7 @@ export default function Register(){
         try {
             const response = await api.post('ongs', data);
             alert(`seu ID de acesso: ${response.data.id}`);
-            history.push('/')
+            history('/')
         } catch(err){
             alert('Erro no cadastro, tente novamente.')
         }
